@@ -69,6 +69,23 @@ bool Track::starred() {
   return starred;
 }
 
+int Track::getAvailability() {
+  sp_track_availability availability = sp_track_get_availability(application->session, track);
+  switch(availability) {
+    case SP_TRACK_AVAILABILITY_UNAVAILABLE:
+      return 0;
+    case SP_TRACK_AVAILABILITY_AVAILABLE:
+      return 1;
+      break;
+    case SP_TRACK_AVAILABILITY_NOT_STREAMABLE:
+      return -1;
+    case SP_TRACK_AVAILABILITY_BANNED_BY_ARTIST:
+      return -2;
+  }
+  return 0;
+  
+}
+
 int Track::popularity() {
   int popularity = -1;
   if(sp_track_is_loaded(track)) {

@@ -1,3 +1,7 @@
+0.7.1-drsounds
+-----
+* Added availability property for track. 
+
 0.7.0
 -----
 * FEATURE: audio handler to receive the audio in JavaScript

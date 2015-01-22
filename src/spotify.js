@@ -1,6 +1,9 @@
 var _spotify = require('./nodespotify');
 var metadataUpdater = require('./metadataUpdater');
-
+var SP_TRACK_AVAILABILITY_UNAVAILABLE = 0;
+var SP_TRACK_AVAILABILITY_AVAILABLE = 1;
+var SP_TRACK_AVAILABILITY_NOT_STREAMABLE = -1;
+var SP_TRACK_AVAILABILITY_BANNED_BY_ARTIST = -2; 
 function addMethodsToPrototypes(sp) {
   function arrayGetter(name, refer) {
     var out = new Array(refer['num' + name + 's']);
