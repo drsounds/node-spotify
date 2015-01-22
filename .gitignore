@@ -28,7 +28,7 @@ node-spotify.includes
 #IntelliJ
 *.iml
 .idea
-
+test/loginData.js
 # other files
 executes.txt
 TODOS

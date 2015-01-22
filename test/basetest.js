@@ -1,6 +1,6 @@
 var spotify = require('../build/Debug/spotify')({appkeyFile: '../spotify_appkey.key'});
 var loginData = require('./loginData.js');
-
+console.log(loginData);
 /*
  * The user probably wants to logout before quitting, so we set a timeout.
  */
