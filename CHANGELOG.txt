@@ -1,6 +1,6 @@
 0.7.1-drsounds
 -----
-* Added availability property for track. 
+* Added availability property for track object. 
 
 0.7.0
 -----

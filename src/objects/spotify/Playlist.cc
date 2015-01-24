@@ -100,6 +100,7 @@ bool Playlist::isLoaded() {
   return sp_playlist_is_loaded(playlist);
 }
 
+
 bool Playlist::isCollaborative() {
   if(sp_playlist_is_loaded(playlist)) {
     return sp_playlist_is_collaborative(playlist);
