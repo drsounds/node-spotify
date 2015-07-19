@@ -30,6 +30,10 @@ int PlaylistContainer::numPlaylists() {
   return 0;
 }
 
+void PlaylistContainer::addPlaylistFromURI(std::string uri) {
+  sp_playlistcontainer_add_new_playlist(playlistContainer, uri.c_str());
+}
+
 void PlaylistContainer::addPlaylist(std::string name) {
   sp_playlist* spotifyPlaylist = sp_playlistcontainer_add_new_playlist(playlistContainer, name.c_str());
   if(spotifyPlaylist == nullptr) {

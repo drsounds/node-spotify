@@ -50,6 +50,21 @@ Handle<Value> NodePlaylistContainer::getPlaylist(const Arguments& args) {
   return scope.Close(outNodePlaylist);
 }
 
+Handle<Value> NodePlaylistContainer::addPlaylistFromURI(const Arguments& args) {
+  HandleScope scope;
+  if(args.Length() < 1 || !args[0]->IsString()) {
+    return scope.Close(V8_EXCEPTION("addPlaylist needs a string as its argument"));
+  }
+  NodePlaylistContainer* nodePlaylistContainer = node::ObjectWrap::Unwrap<NodePlaylistContainer>(args.This());
+  String::Utf8Value playlistName(args[0]->ToString());
+  try {
+    nodePlaylistContainer->playlistContainer->addPlaylistFromURI(std::string(*playlistName));
+  } catch(const PlaylistCreationException& e) {
+    return scope.Close(V8_EXCEPTION("Playlist creation failed"));
+  }
+  return scope.Close(Undefined());
+}
+
 Handle<Value> NodePlaylistContainer::addPlaylist(const Arguments& args) {
   HandleScope scope;
   if(args.Length() < 1 || !args[0]->IsString()) {

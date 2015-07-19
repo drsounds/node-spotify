@@ -22,6 +22,7 @@ public:
   static Handle<Value> isLoaded(Local<String> property, const AccessorInfo& info);
   static Handle<Value> getNumPlaylists(Local<String> property, const AccessorInfo& info);
   static Handle<Value> addPlaylist(const Arguments& args);
+  static Handle<Value> addPlaylistFromURI(const Arguments& args);
   static Handle<Value> addFolder(const Arguments& args);
   static Handle<Value> deletePlaylist(const Arguments& args);
   static Handle<Value> movePlaylist(const Arguments& args);

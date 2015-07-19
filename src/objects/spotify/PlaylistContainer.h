@@ -23,6 +23,7 @@ public:
   void movePlaylist(int index, int newPosition);
   std::unique_ptr<User> owner();
   bool isLoaded();
+  void addPlaylistFromURI(std::string uri);
 private:
   sp_playlistcontainer* playlistContainer;
 };
